@@ -24,7 +24,7 @@ class Tableau01 extends Tableau00{
 
         //un groupe de plateformes statiques
         let groupeVert = this.physics.add.staticGroup();
-        groupeVert.create(300, 250, 'ground');
+        groupeVert.create(250, 250, 'ground');
         groupeVert.create(350, 260, 'ground');
         groupeVert.create(400, 270, 'ground');
         groupeVert.create(450, 280, 'ground');
