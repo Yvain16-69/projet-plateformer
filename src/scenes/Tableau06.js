@@ -4,6 +4,8 @@ class Tableau06 extends Tableau{
         super.preload();
         this.load.image('star', 'assets/star.png');
         this.load.image('monster-violet', 'assets/monster-violet.png');
+        this.load.image('monster-jaune', 'assets/monster-jaune.png');
+
 
     }
     create() {
@@ -31,8 +33,6 @@ class Tableau06 extends Tableau{
         this.monstre.setBounce(1);
         this.monstre.setVelocityX(50);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
-
 
     }
 
