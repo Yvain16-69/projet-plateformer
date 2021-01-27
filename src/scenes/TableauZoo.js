@@ -5,10 +5,12 @@ class TableauZoo extends Tableau{
         this.load.image('star', 'assets/star.png');
         this.load.image('monster-violet', 'assets/monster-violet.png');
         this.load.image('monster-jaune', 'assets/monster-jaune.png');
+        this.load.image('Kamek', 'assets/Kamek.png');
 
     }
     create() {
         super.create();
+
         //quelques étoiles
         let largeur=64*2;
         this.stars=this.physics.add.group();
@@ -33,13 +35,14 @@ class TableauZoo extends Tableau{
         this.monstre.setVelocityX(50);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
 
-        this.monstre=this.physics.add.sprite(200,this.sys.canvas.height-70,"monster-jaune");
+        this.monstre=this.physics.add.sprite(150,this.sys.canvas.height-70,"monster-jaune");
         this.monstre.setOrigin(0,0);
         this.monstre.setDisplaySize(64, 64);
         this.monstre.setCollideWorldBounds(true);
         this.monstre.setBounce(1);
         this.monstre.setVelocityX(50);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
+    
     }
 
 }
