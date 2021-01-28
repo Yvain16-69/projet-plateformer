@@ -5,7 +5,7 @@ class TableauZoo extends Tableau{
         this.load.image('star', 'assets/star.png');
         this.load.image('monster-violet', 'assets/monster-violet.png');
         this.load.image('monster-jaune', 'assets/monster-jaune.png');
-        this.load.image('Kamek', 'assets/Kamek.png');
+        this.load.image('monster-fly', 'assets/monster-fly.png');
 
     }
     create() {
@@ -43,6 +43,7 @@ class TableauZoo extends Tableau{
         this.monstre.setVelocityX(50);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
     
+        new MonsterFly(this,400,100);
     }
 
 }
