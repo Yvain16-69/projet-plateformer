@@ -5,6 +5,7 @@ class TableauZoo extends Tableau{
         this.load.image('star', 'assets/star.png');
         this.load.image('monster-violet', 'assets/monster-violet.png');
         this.load.image('monster-jaune', 'assets/monster-jaune.png');
+        this.load.image('monster-green', 'assets/monster-green.png');
         this.load.image('monster-fly', 'assets/monster-fly.png');
 
     }
