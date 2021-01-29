@@ -4,9 +4,9 @@ class TableauZoo extends Tableau{
         super.preload();
         this.load.image('star', 'assets/star.png');
         this.load.image('monster-violet', 'assets/monster-violet.png');
-        this.load.image('monster-jaune', 'assets/monster-jaune.png');
-        this.load.image('monster-green', 'assets/monster-green.png');
+        this.load.image('bowser', 'assets/bowser.png');
         this.load.image('monster-fly', 'assets/monster-fly.png');
+        this.load.image('plante-pirahna', 'assets/plante-pirahna.png');
 
     }
     create() {
@@ -36,17 +36,17 @@ class TableauZoo extends Tableau{
         this.monstre.setVelocityX(50);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
 
-        this.monstre=this.physics.add.sprite(150,this.sys.canvas.height-70,"monster-jaune");
+        this.monstre=this.physics.add.sprite(150,this.sys.canvas.height-70,"bowser");
         this.monstre.setOrigin(0,0);
-        this.monstre.setDisplaySize(64, 64);
+        this.monstre.setDisplaySize(80, 80);
         this.monstre.setCollideWorldBounds(true);
         this.monstre.setBounce(1);
         this.monstre.setVelocityX(20);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
 
-        this.monstre=this.physics.add.sprite(550,this.sys.canvas.height-70,"monster-green");
+        this.monstre=this.physics.add.sprite(550,this.sys.canvas.height-70,"plante-pirahna");
         this.monstre.setOrigin(0,0);
-        this.monstre.setDisplaySize(64, 108);
+        this.monstre.setDisplaySize(48, 90);
         this.monstre.setCollideWorldBounds(true);
         this.monstre.setBounce(0);
         this.monstre.setVelocityX(0);
