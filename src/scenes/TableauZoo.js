@@ -4,7 +4,7 @@ class TableauZoo extends Tableau{
         super.preload();
         this.load.image('star', 'assets/star.png');
         this.load.image('goomba', 'assets/goomba.png');
-        this.load.image('monster-violet', 'assets/monster-violet');
+        this.load.image('bob-omb', 'assets/bob-omb.png');
         this.load.image('monster-fly', 'assets/monster-fly.png');
         this.load.image('plante-pirahna', 'assets/plante-pirahna.png');
         this.load.image('thwomp', 'assets/thwomp.png');
@@ -37,12 +37,12 @@ class TableauZoo extends Tableau{
         this.monstre.setVelocityX(80);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
 
-        this.monstre=this.physics.add.sprite(850,this.sys.canvas.height-70,"monster-violet");
+        this.monstre=this.physics.add.sprite(550,this.sys.canvas.height-70,"bob-omb");
         this.monstre.setOrigin(0,0);
-        this.monstre.setDisplaySize(64,64);
+        this.monstre.setDisplaySize(80,80);
         this.monstre.setCollideWorldBounds(true);
         this.monstre.setBounce(1);
-        this.monstre.setVelocityX(50);
+        this.monstre.setVelocityX(80);
         this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
 
         this.monstre=this.physics.add.sprite(220,this.sys.canvas.height-70,"plante-pirahna");
