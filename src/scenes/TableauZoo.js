@@ -29,50 +29,13 @@ class TableauZoo extends Tableau{
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
 
         //notre monstre
-        this.monstre=this.physics.add.sprite(850,this.sys.canvas.height-70,"goomba");
-        this.monstre.setOrigin(0,0);
-        this.monstre.setDisplaySize(64,64);
-        this.monstre.setCollideWorldBounds(true);
-        this.monstre.setBounce(1);
-        this.monstre.setVelocityX(80);
-        this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
-        this.monstre=this.physics.add.sprite(550,this.sys.canvas.height-70,"bob-omb");
-        this.monstre.setOrigin(0,0);
-        this.monstre.setDisplaySize(80,80);
-        this.monstre.setCollideWorldBounds(true);
-        this.monstre.setBounce(1);
-        this.monstre.setVelocityX(50);
-        this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
-        this.monstre=this.physics.add.sprite(220,this.sys.canvas.height-70,"plante-pirahna");
-        this.monstre.setOrigin(0,0);
-        this.monstre.setDisplaySize(48, 90);
-        this.monstre.setCollideWorldBounds(true);
-        this.monstre.setBounce(0);
-        this.monstre.setVelocityX(0);
-        this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
-        this.monstre=this.physics.add.sprite(270,this.sys.canvas.height-70,"thwomp");
-        this.monstre.setOrigin(3,7);
-        this.monstre.setDisplaySize(64, 80);
-        this.monstre.setCollideWorldBounds(false);
-        this.monstre.setBounce(0);
-        this.monstre.setVelocityX(0);
-        this.monstre.setVelocityY(-100);
-        this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
-        this.monstre=this.physics.add.sprite(320,this.sys.canvas.height-70,"thwomp");
-        this.monstre.setOrigin(3,7);
-        this.monstre.setDisplaySize(64, 80);
-        this.monstre.setCollideWorldBounds(false);
-        this.monstre.setBounce(0);
-        this.monstre.setVelocityX(0);
-        this.monstre.setVelocityY(50);
-        this.physics.add.overlap(this.player, this.monstre, this.hitSpike, null, this);
-
     
         new MonsterFly(this,400,100);
+        new Goomba(this,600,420);
+        new BobOmb(this,200,200);
+        new Thwomp(this,400,300);
+        new Thwomp(this,500,300);
+        new PlantePirahna(this,300,400);
     }
 
 }
