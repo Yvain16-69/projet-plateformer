@@ -11,7 +11,7 @@ class Thwomp extends ObjetEnnemi{
         this.body.allowGravity=false;
 
         //gestion de la taille
-        this.setDisplaySize(64,64);
+        this.setDisplaySize(64,72);
 
         //on réduit un peu la zone de hit
         this.setBodySize(this.body.width-400,this.body.height-400);
@@ -20,20 +20,24 @@ class Thwomp extends ObjetEnnemi{
         //définir les propriété que l'on va utiliser dans notre animation
 
         // X
-        this.originalX=x;
-        this.minX=x-200;
-        this.maxX=x+200;
+        this.originalX=scene;
+        this.minX=x;
+        this.maxX=x;
 
         // Y
         this.originalY=y;
-        this.minY=y-5;
-        this.maxY=y+5;
+        this.minY=y;
+        this.maxY=y==0;
 
         // on applique les propriété du début de l'animation
         this.x=this.minX;
         this.y=this.minY;
         this.alpha=0;
         let me=this;
+
+        this.setCollideWorldBounds(true);
+        this.setBounce(1);
+        this.setVelocityX(80);
 
         //on fait apparaitre notre objet avec un petit delay, puis on lance l'animation
         //ceci a pour effet de décaler les animations pour ce même objet

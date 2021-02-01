@@ -31,10 +31,10 @@ class TableauZoo extends Tableau{
         //notre monstre
     
         new MonsterFly(this,400,100);
-        new Goomba(this,600,420);
-        new BobOmb(this,200,200);
-        new Thwomp(this,400,300);
-        new Thwomp(this,500,300);
+        new Goomba(this,750,420);
+        new BobOmb(this,400,420);
+        new Thwomp(this,85,40);
+        new Thwomp(this,170,40);
         new PlantePirahna(this,300,400);
     }
 
