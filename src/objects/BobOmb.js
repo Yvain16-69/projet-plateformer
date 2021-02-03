@@ -21,7 +21,7 @@ class BobOmb extends ObjetEnnemi{
 
         this.setCollideWorldBounds(true);
         this.setBounce(1);
-        this.setVelocityX(80);
+        this.setVelocityX(50);
 
         //on fait apparaitre notre objet avec un petit delay, puis on lance l'animation
         //ceci a pour effet de décaler les animations pour ce même objet
