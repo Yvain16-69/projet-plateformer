@@ -20,20 +20,6 @@ class Thwomp extends ObjetEnnemi{
         //définir les propriété que l'on va utiliser dans notre animation
 
         // X
-        this.originalX=scene;
-        this.minX=x;
-        this.maxX=x;
-
-        // Y
-        this.originalY=y;
-        this.minY=y;
-        this.maxY=y==0;
-
-        // on applique les propriété du début de l'animation
-        this.x=this.minX;
-        this.y=this.minY;
-        this.alpha=0;
-        let me=this;
 
         this.setCollideWorldBounds(true);
         this.setBounce(1);
@@ -41,43 +27,5 @@ class Thwomp extends ObjetEnnemi{
 
         //on fait apparaitre notre objet avec un petit delay, puis on lance l'animation
         //ceci a pour effet de décaler les animations pour ce même objet
-        scene.tweens.add({
-                targets:this,
-                duration:200,
-                delay:Math.random()*1000,
-                alpha:{
-                    startDelay:Math.random()*5000,
-                    from:0,
-                    to:1,
-                },
-                onComplete: function () {
-                    me.start();
-                }
-            })
-
     }
-
-    start(){
-        this.scene.tweens.add({
-            targets: this,
-            x: {
-                from: this.minX,
-                to:this.maxX,
-                duration: 10*1000,
-                ease: 'Sine.easeInOut',
-                yoyo: -1,
-                repeat:-1,
-                flipX:true,
-            },
-            y: {
-                from: this.minY,
-                to:this.maxY,
-                duration: 500,
-                ease: 'Sine.easeInOut',
-                yoyo: -1,
-                repeat:-1
-            }
-        });
-    }
-
 }
