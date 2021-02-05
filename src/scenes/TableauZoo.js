@@ -28,7 +28,7 @@ class TableauZoo extends Tableau{
         });
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
 
-        //notre monstre
+        //Les classes d'ennemis (et leurs coordonnées dans le niveau)
     
         new MonsterFly(this,400,100);
         new Goomba(this,850,420);
