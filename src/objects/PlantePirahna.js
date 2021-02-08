@@ -14,7 +14,7 @@ class PlantePirahna extends ObjetEnnemi{
         this.setDisplaySize(64,104);
 
         //on réduit un peu la zone de hit
-        this.setBodySize(this.body.width-400,this.body.height-400);
+        this.setBodySize(this.body.width-400,this.body.height-200);
         this.setOffset(250, 250);
 
         //définir les propriété que l'on va utiliser dans notre animation

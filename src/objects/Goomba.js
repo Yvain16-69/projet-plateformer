@@ -14,8 +14,8 @@ class Goomba extends ObjetEnnemi{
         this.setDisplaySize(64,64);
 
         //on réduit un peu la zone de hit
-        this.setBodySize(this.body.width-400,this.body.height-400);
-        this.setOffset(150, 250);
+        this.setBodySize(this.body.width-400,this.body.height-300);
+        this.setOffset(210, 50);
 
         //définir les propriété que l'on va utiliser dans notre animation
 

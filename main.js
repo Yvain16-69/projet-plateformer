@@ -10,11 +10,12 @@ let config = {
         default: 'arcade',
         arcade: {
             gravity: { y: 100*3 },
-            debug: false,
+            debug: true,
         }
     },
     scene: [
         new Ui(),
+        new TableauScrolling("Scrolling"),
         new TableauZoo("Monstres"),
         new Tableau00("Des étoiles"),
         new Tableau01("Des plateformes"),

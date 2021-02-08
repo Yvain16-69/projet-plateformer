@@ -14,7 +14,7 @@ class Thwomp extends ObjetEnnemi{
         this.setDisplaySize(64,72);
 
         //on réduit un peu la zone de hit
-        this.setBodySize(this.body.width-400,this.body.height-400);
+        this.setBodySize(this.body.width-100,this.body.height-200);
         this.setOffset(50, 150);
 
         //définir les propriété que l'on va utiliser dans notre animation
