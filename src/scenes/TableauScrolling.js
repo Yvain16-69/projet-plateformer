@@ -25,7 +25,7 @@ class TableauScrolling extends Tableau{
         this.physics.add.collider(this.player,this.platforms);
 
         this.platforms = this.physics.add.staticGroup();
-        this.platforms.create(100, 500, 'ground').setScale(0.5).refreshBody();
+        this.platforms.create(100, 550, 'ground').setScale(0.5).refreshBody();
         this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
 
         //physique
