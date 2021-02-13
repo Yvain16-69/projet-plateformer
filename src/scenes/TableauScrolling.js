@@ -26,7 +26,7 @@ class TableauScrolling extends Tableau{
 
         // placement des pateformes
         this.platforms = this.physics.add.staticGroup();
-        this.platforms.create(216, 575, 'ground').setScale(0.5).refreshBody();
+        this.platforms.create(432, 548, 'ground').setScale(1).refreshBody();
         //this.platforms.create(648, 575, 'ground').setScale(0.5).refreshBody();
 
 
