@@ -5,6 +5,11 @@ class TableauScrolling extends Tableau{
         this.load.image('star', 'assets/star.png');
         this.load.image('ground', 'assets/platform.png');
         this.load.image('sky-2', 'assets/sky-2.jpg');
+        this.load.image('platform-vg', 'assets/platform-vg.png');
+        this.load.image('platform-mg', 'assets/platform-mg.png');
+        this.load.image('platform-vd', 'assets/platform-vd.png');
+        this.load.image('platform-md', 'assets/platform-md.png');
+
     }
     create() {
         super.create();
@@ -26,13 +31,16 @@ class TableauScrolling extends Tableau{
 
         // placement des pateformes
         this.platforms = this.physics.add.staticGroup();
-        this.platforms.create(432, 548, 'ground').setScale(1).refreshBody();
-        //this.platforms.create(648, 575, 'ground').setScale(0.5).refreshBody();
-
-
+        this.platforms.create(224, 560, 'ground').setScale(1).refreshBody();
+        this.platforms.create(672, 560, 'ground').setScale(1).refreshBody();
+        this.platforms.create(1008, 480, 'platform-vg').setScale(1).refreshBody();
+        this.platforms.create(1008, 560, 'platform-mg').setScale(1).refreshBody();
+        this.platforms.create(1232, 480, 'platform-vd').setScale(1).refreshBody();
+        this.platforms.create(1232, 560, 'platform-md').setScale(1).refreshBody();
+        this.platforms.create(1568, 560, 'ground').setScale(1).refreshBody();
 
         //étoiles
-        this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
+        //this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
 
         //physique
         this.physics.add.collider(this.player, this.platforms);
