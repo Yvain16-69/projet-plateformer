@@ -24,8 +24,14 @@ class TableauScrolling extends Tableau{
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
         this.physics.add.collider(this.player,this.platforms);
 
+        // placement des pateformes
         this.platforms = this.physics.add.staticGroup();
-        this.platforms.create(100, 550, 'ground').setScale(0.5).refreshBody();
+        this.platforms.create(216, 575, 'ground').setScale(0.5).refreshBody();
+        //this.platforms.create(648, 575, 'ground').setScale(0.5).refreshBody();
+
+
+
+        //étoiles
         this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
 
         //physique
