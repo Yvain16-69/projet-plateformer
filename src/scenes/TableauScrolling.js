@@ -38,6 +38,7 @@ class TableauScrolling extends Tableau{
         this.platforms.create(1232, 480, 'platform-vd').setScale(1).refreshBody();
         this.platforms.create(1232, 560, 'platform-md').setScale(1).refreshBody();
         this.platforms.create(1568, 560, 'ground').setScale(1).refreshBody();
+        this.platforms.create(1904, 560, 'platform-vd').setScale(1).refreshBody();
 
         //étoiles
         //this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
