@@ -51,14 +51,13 @@ class TableauScrolling extends Tableau{
         //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répètE
         this.sky=this.add.tileSprite(
             0,
-            0,
+            21,
             this.sys.canvas.width,
             this.sys.canvas.height,
             'sky'
             );
         this.sky.setOrigin(0,0);
         this.sky.setScrollFactor(0);//fait en sorte que le ciel ne suive pas la caméra
-        //this.sky.tileScaleX=this.sky.tileScaleY=0.1;
     
         //on ajoute une deuxième couche de ciel
             this.sky2=this.add.tileSprite(
