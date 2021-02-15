@@ -4,8 +4,8 @@ class TableauScrolling extends Tableau{
         super.preload();
         this.load.image('star', 'assets/star.png');
         this.load.image('ground', 'assets/platform.png');
-        this.load.image('sky-2', 'assets/sky-2.jpg');
-        this.load.image('background-leafs', 'assets/background-leafs.png');
+        this.load.image('sky', 'assets/sky.png');
+        this.load.image('sky-2', 'assets/sky-2.png');
         this.load.image('platform-vg', 'assets/platform-vg.png');
         this.load.image('platform-mg', 'assets/platform-mg.png');
         this.load.image('platform-vd', 'assets/platform-vd.png');
@@ -54,21 +54,23 @@ class TableauScrolling extends Tableau{
             0,
             this.sys.canvas.width,
             this.sys.canvas.height,
-            'sky-2'
-        );
+            'sky'
+            );
         this.sky.setOrigin(0,0);
         this.sky.setScrollFactor(0);//fait en sorte que le ciel ne suive pas la caméra
+        //this.sky.tileScaleX=this.sky.tileScaleY=0.1;
+    
         //on ajoute une deuxième couche de ciel
-        this.sky2=this.add.tileSprite(
+            this.sky2=this.add.tileSprite(
             0,
             0,
             this.sys.canvas.width,
             this.sys.canvas.height,
             'sky-2'
-        );
+            );
         this.sky2.setScrollFactor(0);
         this.sky2.setOrigin(0,0);
-        this.sky2.alpha=0.2;
+        this.sky2.alpha=1;
         //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
 
         //fait passer les éléments devant le ciel
@@ -86,7 +88,6 @@ class TableauScrolling extends Tableau{
         //le deuxième ciel se déplace moins vite pour accentuer l'effet
         this.sky2.tilePositionX=this.cameras.main.scrollX*0.3+500;
         this.sky2.tilePositionY=this.cameras.main.scrollY*0.1+30;
-
 
     }
 }
