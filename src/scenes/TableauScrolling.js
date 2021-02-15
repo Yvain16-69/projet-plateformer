@@ -5,6 +5,7 @@ class TableauScrolling extends Tableau{
         this.load.image('star', 'assets/star.png');
         this.load.image('ground', 'assets/platform.png');
         this.load.image('sky-2', 'assets/sky-2.jpg');
+        this.load.image('background-leafs', 'assets/background-leafs.png');
         this.load.image('platform-vg', 'assets/platform-vg.png');
         this.load.image('platform-mg', 'assets/platform-mg.png');
         this.load.image('platform-vd', 'assets/platform-vd.png');
@@ -47,7 +48,7 @@ class TableauScrolling extends Tableau{
         this.physics.add.collider(this.player, this.platforms);
         this.physics.add.collider(this.platforms, this.stars);
 
-        //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répète
+        //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répètE
         this.sky=this.add.tileSprite(
             0,
             0,
@@ -70,11 +71,11 @@ class TableauScrolling extends Tableau{
         this.sky2.alpha=0.2;
         //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
 
-
         //fait passer les éléments devant le ciel
         this.platforms.setDepth(10)
         this.stars.setDepth(10)
         this.player.setDepth(10)
+
     }
 
     update(){
@@ -85,9 +86,7 @@ class TableauScrolling extends Tableau{
         //le deuxième ciel se déplace moins vite pour accentuer l'effet
         this.sky2.tilePositionX=this.cameras.main.scrollX*0.3+500;
         this.sky2.tilePositionY=this.cameras.main.scrollY*0.1+30;
+
+
     }
-
-
-
 }
-
