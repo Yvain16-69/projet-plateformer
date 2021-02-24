@@ -71,7 +71,7 @@ class TableauScrolling extends Tableau{
         this.sky2.setScrollFactor(0);
         this.sky2.setOrigin(0,0);
         this.sky2.alpha=1;
-        //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
+        this.sky2.tileScaleX=this.sky.tileScaleY=0.8;
 
         this.sky3=this.add.tileSprite(
             0,
