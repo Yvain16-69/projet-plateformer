@@ -6,6 +6,7 @@ class TableauScrolling extends Tableau{
         this.load.image('ground', 'assets/platform.png');
         this.load.image('sky', 'assets/sky.png');
         this.load.image('sky-2', 'assets/sky-2.png');
+        this.load.image('sky-3', 'assets/sky-3.png')
         this.load.image('platform-vg', 'assets/platform-vg.png');
         this.load.image('platform-mg', 'assets/platform-mg.png');
         this.load.image('platform-vd', 'assets/platform-vd.png');
@@ -72,6 +73,17 @@ class TableauScrolling extends Tableau{
         this.sky2.alpha=1;
         //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
 
+        this.sky3=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            'sky-3'
+            );
+        this.sky3.setScrollFactor(0);
+        this.sky3.setOrigin(0,0);
+        this.sky3.alpha=1;
+
         //fait passer les éléments devant le ciel
         this.platforms.setDepth(10)
         this.stars.setDepth(10)
@@ -87,6 +99,9 @@ class TableauScrolling extends Tableau{
         //le deuxième ciel se déplace moins vite pour accentuer l'effet
         this.sky2.tilePositionX=this.cameras.main.scrollX*0.3+500;
         this.sky2.tilePositionY=this.cameras.main.scrollY*0.1+30;
+
+        this.sky3.tilePositionX=this.cameras.main.scrollX*0.5+500;
+        this.sky3.tilePositionY=this.cameras.main.scrollY*0.1+30;
 
     }
 }
