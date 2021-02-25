@@ -5,8 +5,10 @@ class TableauScrolling extends Tableau{
         this.load.image('star', 'assets/star.png');
         this.load.image('ground', 'assets/ground.png');
         this.load.image('ciel', 'assets/ciel.png');
-        this.load.image('plan-buisson', 'assets/plan-buisson.png')
-        this.load.image('plan-troncs', 'assets/plan-troncs.png')
+        this.load.image('plan-buisson', 'assets/plan-buisson.png');
+        this.load.image('plan-buisson2', 'assets/plan-buisson2.png');
+        this.load.image('plan-troncs', 'assets/plan-troncs.png');
+        this.load.image('plan-troncs2', 'assets/plan-troncs2.png');
         this.load.image('plan-feuilleshaut', 'assets/plan-feuilleshaut.png');
         this.load.image('platform-vg', 'assets/platform-vg.png');
         this.load.image('platform-mg', 'assets/platform-mg.png');
@@ -35,7 +37,7 @@ class TableauScrolling extends Tableau{
 
         // placement des pateformes
         this.platforms = this.physics.add.staticGroup();
-        this.platforms.create(672, 200, 'platform').setScale(1).refreshBody();
+        this.platforms.create(572, 250, 'platform').setScale(1).refreshBody();
         this.platforms.create(224, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(672, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(1008, 352, 'platform-vg').setScale(1).refreshBody();
@@ -44,8 +46,6 @@ class TableauScrolling extends Tableau{
         this.platforms.create(1232, 428, 'platform-md').setScale(1).refreshBody();
         this.platforms.create(1568, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(1904, 428, 'platform-vd').setScale(1).refreshBody();
-
-        new Goomba(this,450,580);
 
         //étoiles
         //this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
@@ -67,16 +67,18 @@ class TableauScrolling extends Tableau{
     
         //on ajoute une deuxième couche de ciel
 
-        this.planbuisson=this.add.tileSprite(
+        this.plantroncs2=this.add.tileSprite(
             0,
             0,
             this.sys.canvas.width,
             this.sys.canvas.height,
-            'plan-buisson'
+            'plan-troncs2'
             );
-        this.planbuisson.setScrollFactor(0);
-        this.planbuisson.setOrigin(0,0);
-        this.planbuisson.alpha=1;
+        this.plantroncs2.setScrollFactor(0);
+        this.plantroncs2.setOrigin(0,0);
+        this.plantroncs2.alpha=1;
+        //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
+
         //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
 
 
@@ -91,6 +93,17 @@ class TableauScrolling extends Tableau{
         this.plantroncs.setOrigin(0,0);
         this.plantroncs.alpha=1;
         //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
+
+        this.planbuisson=this.add.tileSprite(
+            0,
+            0,
+            this.sys.canvas.width,
+            this.sys.canvas.height,
+            'plan-buisson'
+            );
+        this.planbuisson.setScrollFactor(0);
+        this.planbuisson.setOrigin(0,0);
+        this.planbuisson.alpha=1;
 
         this.planfeuilleshaut=this.add.tileSprite(
             0,
@@ -113,15 +126,18 @@ class TableauScrolling extends Tableau{
     update(){
         super.update();
         //le ciel se déplace moins vite que la caméra pour donner un effet paralax
-        this.ciel.tilePositionX=this.cameras.main.scrollX*0.4;
+        this.ciel.tilePositionX=this.cameras.main.scrollX*0.2;
         this.ciel.tilePositionY=this.cameras.main.scrollY*0.2;
         //le deuxième ciel se déplace moins vite pour accentuer l'effet
 
-        this.planbuisson.tilePositionX=this.cameras.main.scrollX*0.6+500;
-        this.planbuisson.tilePositionY=this.cameras.main.scrollY*0.1;
+        this.plantroncs2.tilePositionX=this.cameras.main.scrollX*0.3+200;
+        this.plantroncs2.tilePositionY=this.cameras.main.scrollY*0.5;
 
-        this.plantroncs.tilePositionX=this.cameras.main.scrollX*0.8+500;
+        this.plantroncs.tilePositionX=this.cameras.main.scrollX*0.6+500;
         this.plantroncs.tilePositionY=this.cameras.main.scrollY*0.1+30;
+
+        this.planbuisson.tilePositionX=this.cameras.main.scrollX*0.7+500;
+        this.planbuisson.tilePositionY=this.cameras.main.scrollY*0.1-15;
 
         this.planfeuilleshaut.tilePositionX=this.cameras.main.scrollX*1+500;
         this.planfeuilleshaut.tilePositionY=this.cameras.main.scrollY*0.1;
