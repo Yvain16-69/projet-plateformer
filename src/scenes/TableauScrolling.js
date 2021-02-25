@@ -3,7 +3,7 @@ class TableauScrolling extends Tableau{
     preload() {
         super.preload();
         this.load.image('star', 'assets/star.png');
-        this.load.image('ground', 'assets/platform.png');
+        this.load.image('ground', 'assets/ground.png');
         this.load.image('ciel', 'assets/ciel.png');
         this.load.image('plan-buisson', 'assets/plan-buisson.png')
         this.load.image('plan-troncs', 'assets/plan-troncs.png')
@@ -12,6 +12,7 @@ class TableauScrolling extends Tableau{
         this.load.image('platform-mg', 'assets/platform-mg.png');
         this.load.image('platform-vd', 'assets/platform-vd.png');
         this.load.image('platform-md', 'assets/platform-md.png');
+        this.load.image('platform', 'assets/platform.png');
 
     }
     create() {
@@ -34,6 +35,7 @@ class TableauScrolling extends Tableau{
 
         // placement des pateformes
         this.platforms = this.physics.add.staticGroup();
+        this.platforms.create(672, 200, 'platform').setScale(1).refreshBody();
         this.platforms.create(224, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(672, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(1008, 352, 'platform-vg').setScale(1).refreshBody();
