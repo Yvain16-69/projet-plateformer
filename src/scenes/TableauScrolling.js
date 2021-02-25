@@ -37,7 +37,6 @@ class TableauScrolling extends Tableau{
 
         // placement des pateformes
         this.platforms = this.physics.add.staticGroup();
-        this.platforms.create(572, 250, 'platform').setScale(1).refreshBody();
         this.platforms.create(224, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(672, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(1008, 352, 'platform-vg').setScale(1).refreshBody();
@@ -45,7 +44,12 @@ class TableauScrolling extends Tableau{
         this.platforms.create(1232, 352, 'platform-vd').setScale(1).refreshBody();
         this.platforms.create(1232, 428, 'platform-md').setScale(1).refreshBody();
         this.platforms.create(1568, 428, 'ground').setScale(1).refreshBody();
-        this.platforms.create(1904, 428, 'platform-vd').setScale(1).refreshBody();
+        this.platforms.create(2016, 428, 'ground').setScale(1).refreshBody();
+        this.platforms.create(2464, 428, 'ground').setScale(1).refreshBody();
+
+        this.platforms.create(1530, 220, 'platform').setScale(1).refreshBody();
+
+
 
         //étoiles
         //this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
