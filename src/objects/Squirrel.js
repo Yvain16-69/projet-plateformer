@@ -24,7 +24,6 @@ class Squirrel extends ObjetEnnemi{
         this.setCollideWorldBounds(true);
         this.setBounce(1);
         this.setVelocityX(80);
-        this.physics.add.overlap(this.player, this.Squirrel, this.hitSquirrel, null, this);
 
         //on fait apparaitre notre objet avec un petit delay, puis on lance l'animation
         //ceci a pour effet de décaler les animations pour ce même objet

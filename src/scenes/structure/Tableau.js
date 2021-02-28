@@ -15,7 +15,7 @@ class Tableau extends Phaser.Scene{
      * Par défaut on charge un fond et le player
      */
     preload(){
-        this.load.image('ciel', 'assets/ciel.png');
+        this.load.image('sky', 'assets/sky.png');
         this.load.image('blood', 'assets/blood.png');
         this.load.image('spike', 'assets/spike.png');
         this.load.spritesheet('player',
@@ -31,9 +31,9 @@ class Tableau extends Phaser.Scene{
          * Le ciel en fond
          * @type {Phaser.GameObjects.Image}
          */
-        this.ciel=this.add.image(0, 0, 'sky').setOrigin(0,0);
-        this.ciel.displayWidth=14*64;
-        this.ciel.setScrollFactor(0,0);
+        this.sky=this.add.image(0, 0, 'sky').setOrigin(0,0);
+        this.sky.displayWidth=14*64;
+        this.sky.setScrollFactor(0,0);
         /**
          * Le joueur
          * @type {Player}
@@ -158,7 +158,7 @@ class Tableau extends Phaser.Scene{
         }
 
     }
-    
+
     /**
      * Pour reset cette scène proprement
      * @private
