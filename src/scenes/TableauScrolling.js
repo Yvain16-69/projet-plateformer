@@ -23,6 +23,7 @@ class TableauScrolling extends Tableau{
 
         // Ennemis
         this.load.image('bob-omb', 'assets/bob-omb.png');
+        this.load.image('squirrel', 'assets/squirrel.png');
 
     }
     create() {
@@ -58,12 +59,11 @@ class TableauScrolling extends Tableau{
         this.platforms.create(1530, 220, 'platform').setScale(1).refreshBody();
 
         // Ennemis
-
-        new Goomba (this,500,428);
-
-
+        new Squirrel (this,200,500);
 
         //étoiles
+        this.stars.create(800,0,"star");
+
         //this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
 
         //physique
