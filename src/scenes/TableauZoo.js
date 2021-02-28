@@ -36,7 +36,7 @@ class TableauZoo extends Tableau{
         new Thwomp(this,85,-100);
         new Thwomp(this,170,-100);
         new PlantePirahna(this,270,400);
-        new Squirrel (this, 270,400)
+        new Squirrel(this,270,400);
     }
 
 }

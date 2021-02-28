@@ -14,12 +14,6 @@ class TableauScrolling extends Tableau{
         this.load.image('plan-feuilleshaut', 'assets/plan-feuilleshaut.png');
 
         // Plateformes
-        this.load.image('ground', 'assets/ground.png');
-        this.load.image('ground', 'assets/ground.png');
-        this.load.image('platform-vg', 'assets/platform-vg.png');
-        this.load.image('platform-mg', 'assets/platform-mg.png');
-        this.load.image('platform-vd', 'assets/platform-vd.png');
-        this.load.image('platform-md', 'assets/platform-md.png');
         this.load.image('platform', 'assets/platform.png');
 
         // Ennemis
@@ -39,6 +33,7 @@ class TableauScrolling extends Tableau{
         this.cameras.main.startFollow(this.player, false, 0.05, 0.05);
 
         //quelques étoiles et plateformes qui vont avec
+        
         this.stars=this.physics.add.group();
         this.platforms=this.physics.add.staticGroup();
 
@@ -49,18 +44,14 @@ class TableauScrolling extends Tableau{
         this.platforms = this.physics.add.staticGroup();
         this.platforms.create(224, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(672, 428, 'ground').setScale(1).refreshBody();
-        this.platforms.create(1008, 352, 'platform-vg').setScale(1).refreshBody();
-        this.platforms.create(1008, 428, 'platform-mg').setScale(1).refreshBody();
-        this.platforms.create(1232, 352, 'platform-vd').setScale(1).refreshBody();
-        this.platforms.create(1232, 428, 'platform-md').setScale(1).refreshBody();
+        this.platforms.create(1120, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(1568, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(2016, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(2464, 428, 'ground').setScale(1).refreshBody();
-
-        this.platforms.create(1530, 220, 'platform').setScale(1).refreshBody();
+        this.platforms.create(1530, 300, 'platform').setScale(1).refreshBody();
 
         // Ennemis
-        new Squirrel (this,200,375);
+        new Squirrel(this,200,375);
 
         //étoiles
         this.stars.create(800,0,"star");
