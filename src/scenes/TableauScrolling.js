@@ -15,6 +15,7 @@ class TableauScrolling extends Tableau{
 
         // Plateformes
         this.load.image('ground', 'assets/ground.png');
+        this.load.image('ground', 'assets/ground.png');
         this.load.image('platform-vg', 'assets/platform-vg.png');
         this.load.image('platform-mg', 'assets/platform-mg.png');
         this.load.image('platform-vd', 'assets/platform-vd.png');
@@ -59,7 +60,7 @@ class TableauScrolling extends Tableau{
         this.platforms.create(1530, 220, 'platform').setScale(1).refreshBody();
 
         // Ennemis
-        new Squirrel (this,200,500);
+        new Squirrel (this,200,375);
 
         //étoiles
         this.stars.create(800,0,"star");
@@ -157,8 +158,6 @@ class TableauScrolling extends Tableau{
 
         this.planfeuilleshaut.tilePositionX=this.cameras.main.scrollX*1+500;
         this.planfeuilleshaut.tilePositionY=this.cameras.main.scrollY*0.1;
-
-
 
     }
 }
