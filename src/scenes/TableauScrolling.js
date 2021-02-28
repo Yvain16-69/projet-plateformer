@@ -4,17 +4,25 @@ class TableauScrolling extends Tableau{
         super.preload();
         this.load.image('star', 'assets/star.png');
         this.load.image('ground', 'assets/ground.png');
+
+        // Différents plans
         this.load.image('ciel', 'assets/ciel.png');
         this.load.image('plan-buisson', 'assets/plan-buisson.png');
         this.load.image('plan-buisson2', 'assets/plan-buisson2.png');
         this.load.image('plan-troncs', 'assets/plan-troncs.png');
         this.load.image('plan-troncs2', 'assets/plan-troncs2.png');
         this.load.image('plan-feuilleshaut', 'assets/plan-feuilleshaut.png');
+
+        // Plateformes
+        this.load.image('ground', 'assets/ground.png');
         this.load.image('platform-vg', 'assets/platform-vg.png');
         this.load.image('platform-mg', 'assets/platform-mg.png');
         this.load.image('platform-vd', 'assets/platform-vd.png');
         this.load.image('platform-md', 'assets/platform-md.png');
         this.load.image('platform', 'assets/platform.png');
+
+        // Ennemis
+        this.load.image('bob-omb', 'assets/bob-omb.png');
 
     }
     create() {
@@ -35,7 +43,7 @@ class TableauScrolling extends Tableau{
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
         this.physics.add.collider(this.player,this.platforms);
 
-        // placement des pateformes
+        // Plateformes
         this.platforms = this.physics.add.staticGroup();
         this.platforms.create(224, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(672, 428, 'ground').setScale(1).refreshBody();
@@ -48,6 +56,10 @@ class TableauScrolling extends Tableau{
         this.platforms.create(2464, 428, 'ground').setScale(1).refreshBody();
 
         this.platforms.create(1530, 220, 'platform').setScale(1).refreshBody();
+
+        // Ennemis
+
+        new Goomba (this,500,428);
 
 
 
