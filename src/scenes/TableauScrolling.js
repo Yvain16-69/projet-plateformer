@@ -19,6 +19,7 @@ class TableauScrolling extends Tableau{
         // Ennemis
         this.load.image('bob-omb', 'assets/bob-omb.png');
         this.load.image('squirrel', 'assets/squirrel.png');
+        this.load.image('thwomp', 'assets/thwomp.png');
 
     }
     create() {
@@ -51,9 +52,10 @@ class TableauScrolling extends Tableau{
         this.platforms.create(1530, 300, 'platform').setScale(1).refreshBody();
 
         // Ennemis
-        new Squirrel(this,200,375);
+        new Squirrel(this,200,365);
+        new Thwomp(this,85,-100);
 
-        //étoiles
+        //Étoiles
         this.stars.create(800,0,"star");
 
         //this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);

@@ -14,8 +14,9 @@ class Squirrel extends ObjetEnnemi{
         this.setDisplaySize(32,48);
 
         //on réduit un peu la zone de hit
-        this.setBodySize(this.body.width-300,this.body.height-200);
-        this.setOffset(210, 50);
+        this.setBodySize(this.body.width,this.body.height);
+        this.setOffset(0, 0);
+        this.setDepth(10);
 
         //définir les propriété que l'on va utiliser dans notre animation
 

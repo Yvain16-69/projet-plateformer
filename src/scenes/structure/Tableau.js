@@ -44,6 +44,7 @@ class Tableau extends Phaser.Scene{
         this.blood.displayWidth=64;
         this.blood.displayHeight=64;
         this.blood.visible=false;
+        this.blood.setDepth(1000);
 
     }
     update(){

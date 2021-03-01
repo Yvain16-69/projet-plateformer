@@ -15,7 +15,7 @@ class BobOmb extends ObjetEnnemi{
 
         //on réduit un peu la zone de hit
         this.setBodySize(this.body.width-200,this.body.height-200);
-        this.setOffset(200, 150);
+        this.setOffset(100, 150);
 
         //définir les propriété que l'on va utiliser dans notre animation
 
