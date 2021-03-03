@@ -49,14 +49,13 @@ class TableauScrolling extends Tableau{
         this.platforms.create(1568, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(2016, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(2464, 428, 'ground').setScale(1).refreshBody();
-        this.platforms.create(1530, 300, 'platform').setScale(1).refreshBody();
+        this.platforms.create(600, 300, 'platform').setScale(1).refreshBody();
 
         // Ennemis
-        new Squirrel(this,200,365);
-        new Thwomp(this,85,-100);
+        new Squirrel(this,400,365);
 
         //Étoiles
-        this.stars.create(800,0,"star");
+        this.stars.create(550,0,"star");
 
         //this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
 
