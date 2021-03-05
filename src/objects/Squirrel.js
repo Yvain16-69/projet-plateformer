@@ -8,7 +8,7 @@ class Squirrel extends ObjetEnnemi{
     constructor(scene, x, y) {
         super(scene, x, y, "squirrel");
         //pas de gravité
-        this.body.allowGravity=false;
+        this.body.allowGravity=true;
 
         //gestion de la taille
         this.setDisplaySize(32,48);
@@ -17,17 +17,10 @@ class Squirrel extends ObjetEnnemi{
         this.setBodySize(this.body.width,this.body.height);
         this.setOffset(0, 0);
         this.setDepth(10);
-
-        //définir les propriété que l'on va utiliser dans notre animation
-
-        // X
-
         this.setCollideWorldBounds(true);
         this.setBounce(1);
-        this.setVelocityX(20);
+        this.setVelocityY(100);
 
-        //on fait apparaitre notre objet avec un petit delay, puis on lance l'animation
-        //ceci a pour effet de décaler les animations pour ce même objet
 
     }
 }

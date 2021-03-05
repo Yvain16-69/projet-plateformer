@@ -15,18 +15,42 @@ class TableauScrolling extends Tableau{
 
         // Plateformes
         this.load.image('platform', 'assets/platform.png');
+        this.load.image('platform-mg', 'assets/platform-mg.png');
+        this.load.image('platform-md', 'assets/platform-md.png');
+        this.load.image('platform-vg', 'assets/platform-vg.png');
+        this.load.image('platform-vd', 'assets/platform-vd.png');
 
         // Ennemis
         this.load.image('bob-omb', 'assets/bob-omb.png');
         this.load.image('squirrel', 'assets/squirrel.png');
         this.load.image('thwomp', 'assets/thwomp.png');
+        this.load.image('souris', 'assets/souris.png');
+        this.load.image('goomba', 'assets/goomba.png');
+
+        //Musique
+        this.load.audio('music', 'assets/sounds/music.mp3');
 
     }
     create() {
         super.create();
 
-        //on définit la taille du tableau
+        //Taille du tableau
         let largeurDuTableau=4000;
+
+        //Musique
+        this.music = this.sound.add('music');
+
+        var musicConfig = {
+            mute: false,
+            volume: 0.1,
+            rate : 1,
+            detune: 0,
+            seek: 0,
+            loop: false,
+            delay:0,
+        }
+        this.music.play(musicConfig);
+
         let hauteurDuTableau=448; //la hauteur est identique au cadre du jeu
         this.cameras.main.setBounds(0, 0, largeurDuTableau, hauteurDuTableau);
         this.physics.world.setBounds(0, 0, largeurDuTableau,  hauteurDuTableau);
@@ -45,17 +69,38 @@ class TableauScrolling extends Tableau{
         this.platforms = this.physics.add.staticGroup();
         this.platforms.create(224, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(672, 428, 'ground').setScale(1).refreshBody();
-        this.platforms.create(1120, 428, 'ground').setScale(1).refreshBody();
+        this.platforms.create(1008, 428, 'platform-mg').setScale(1).refreshBody();
+        this.platforms.create(1008, 348, 'platform-vg').setScale(1).refreshBody();
+        this.platforms.create(1232, 348, 'platform-vd').setScale(1).refreshBody();
+        this.platforms.create(1232, 428, 'platform-md').setScale(1).refreshBody();
+
         this.platforms.create(1568, 428, 'ground').setScale(1).refreshBody();
+        this.platforms.create(1550, 230, 'platform').setScale(1).refreshBody();
+        this.platforms.create(1815, 270, 'platform').setScale(1).refreshBody();
         this.platforms.create(2016, 428, 'ground').setScale(1).refreshBody();
         this.platforms.create(2464, 428, 'ground').setScale(1).refreshBody();
-        this.platforms.create(600, 300, 'platform').setScale(1).refreshBody();
+        this.platforms.create(2912, 428, 'ground').setScale(1).refreshBody();
+        this.platforms.create(2500, 280, 'platform').setScale(1).refreshBody();
+        this.platforms.create(2720, 180, 'platform').setScale(1).refreshBody();
+        this.platforms.create(2960, 280, 'platform').setScale(1).refreshBody();
 
         // Ennemis
-        new Squirrel(this,400,365);
+        new Souris(this,550,371);
+        new Squirrel(this,2200,365);
+        new Squirrel(this,2720,365);
 
         //Étoiles
-        this.stars.create(550,0,"star");
+        this.stars.create(350,0,"star");
+        this.stars.create(390,0,"star");
+        this.stars.create(430,0,"star");
+        this.stars.create(1120,0,"star");
+        this.stars.create(1815,0,"star");
+        this.stars.create(2500,0,"star");
+        this.stars.create(2720,0,"star");
+        this.stars.create(2960,0,"star");
+
+        //star.body.allowGravity=false;
+        //star.setCollideWorldBounds(true);
 
         //this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
 
