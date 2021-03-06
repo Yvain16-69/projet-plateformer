@@ -25,7 +25,6 @@ class TableauScrolling extends Tableau{
         this.load.image('squirrel', 'assets/squirrel.png');
         this.load.image('thwomp', 'assets/thwomp.png');
         this.load.image('souris', 'assets/souris.png');
-        this.load.image('goomba', 'assets/goomba.png');
 
         //Musique
         this.load.audio('music', 'assets/sounds/music.mp3');
@@ -57,13 +56,11 @@ class TableauScrolling extends Tableau{
 
         this.cameras.main.startFollow(this.player, false, 0.05, 0.05);
 
-        //quelques étoiles et plateformes qui vont avec
-        
+        //Physique
         this.stars=this.physics.add.group();
         this.platforms=this.physics.add.staticGroup();
 
         this.physics.add.overlap(this.player, this.stars, this.ramasserEtoile, null, this);
-        this.physics.add.collider(this.player,this.platforms);
 
         // Plateformes
         this.platforms = this.physics.add.staticGroup();
@@ -104,11 +101,10 @@ class TableauScrolling extends Tableau{
 
         //this.stars.create(300,0,"star").setCollideWorldBounds(true).setBounce(0.4);
 
-        //physique
         this.physics.add.collider(this.player, this.platforms);
         this.physics.add.collider(this.platforms, this.stars);
 
-        //on change de ciel, on fait une tileSprite ce qui permet d'avoir une image qui se répètE
+        //Les couches du background
         this.ciel=this.add.tileSprite(
             0,
             0,
@@ -118,8 +114,7 @@ class TableauScrolling extends Tableau{
             );
         this.ciel.setOrigin(0,0);
         this.ciel.setScrollFactor(0);//fait en sorte que le ciel ne suive pas la caméra
-    
-        //on ajoute une deuxième couche de ciel
+
 
         this.plantroncs2=this.add.tileSprite(
             0,
@@ -133,8 +128,6 @@ class TableauScrolling extends Tableau{
         this.plantroncs2.alpha=1;
         //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
 
-        //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
-
 
         this.plantroncs=this.add.tileSprite(
             0,
@@ -146,7 +139,7 @@ class TableauScrolling extends Tableau{
         this.plantroncs.setScrollFactor(0);
         this.plantroncs.setOrigin(0,0);
         this.plantroncs.alpha=1;
-        //this.sky.tileScaleX=this.sky.tileScaleY=0.8;
+
 
         this.planbuisson=this.add.tileSprite(
             0,
@@ -159,6 +152,7 @@ class TableauScrolling extends Tableau{
         this.planbuisson.setOrigin(0,0);
         this.planbuisson.alpha=1;
 
+
         this.planfeuilleshaut=this.add.tileSprite(
             0,
             0,
@@ -170,7 +164,7 @@ class TableauScrolling extends Tableau{
         this.planfeuilleshaut.setOrigin(0,0);
         this.planfeuilleshaut.alpha=1;
 
-        //fait passer les éléments devant le ciel
+        //Profondeur des élements
         this.platforms.setDepth(10)
         this.stars.setDepth(10)
         this.player.setDepth(10)

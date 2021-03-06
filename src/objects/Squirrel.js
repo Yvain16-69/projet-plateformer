@@ -7,8 +7,8 @@ class Squirrel extends ObjetEnnemi{
      */
     constructor(scene, x, y) {
         super(scene, x, y, "squirrel");
-        //pas de gravité
-        this.body.allowGravity=true;
+        scene.add.existing(this)
+        scene.physics.add.existing(this)
 
         //gestion de la taille
         this.setDisplaySize(32,48);
@@ -19,8 +19,7 @@ class Squirrel extends ObjetEnnemi{
         this.setDepth(10);
         this.setCollideWorldBounds(true);
         this.setBounce(1);
-        this.setVelocityY(100);
-
+        this.setVelocityY(10);
 
     }
 }
